@@ -7,11 +7,11 @@ namespace Proyecto_Peliculas.Modelos
 {
     public class Peliculas
     {
-        int id { get; set; }
-        string titulo { get; set; }
-        int duracion { get; set; }
-        string pais { get; set; }
-        string genero { get; set; }
+        public int id { get; set; }
+        public string titulo { get; set; }
+        public int duracion { get; set; }
+        public string pais { get; set; }
+        public string genero { get; set; }
 
         public Peliculas()
         {

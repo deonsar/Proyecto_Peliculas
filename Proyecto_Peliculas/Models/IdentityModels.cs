@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using Proyecto_Peliculas.Modelos;
+using System.Data.Entity;
 
 namespace Proyecto_Peliculas.Models
 {
@@ -20,11 +22,17 @@ namespace Proyecto_Peliculas.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        [System.ThreadStatic]
+        public static ApplicationDbContext applicationDbContext;
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
         
+        public DbSet<Entradas> entradas { get; set;}
+        public DbSet<Peliculas> peliculas { get; set;}
+ 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
