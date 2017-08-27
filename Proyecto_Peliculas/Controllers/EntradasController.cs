@@ -25,6 +25,10 @@ namespace Proyecto_Peliculas.Controllers
         {
             this.entradasService = _entradasService;
         }
+        public EntradasController()
+        {
+
+        }
 
         // GET: api/Entradas
         public IQueryable<Entradas> GetEntradas()
@@ -36,13 +40,13 @@ namespace Proyecto_Peliculas.Controllers
         [ResponseType(typeof(Entradas))]
         public IHttpActionResult GetEntrada(long id)
         {
-            Entradas entradas = entradasService.Get(id);
-            if (entradas == null)
+            Entradas entrada = entradasService.Get(id);
+            if (entrada == null)
             {
                 return NotFound();
             }
 
-            return Ok(entradas);
+            return Ok(entrada);
         }
 
         // PUT: api/Entradas/5

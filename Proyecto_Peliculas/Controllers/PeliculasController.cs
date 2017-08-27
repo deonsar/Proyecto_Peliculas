@@ -26,6 +26,11 @@ namespace Proyecto_Peliculas.Controllers
             this.peliculasService = _peliculasService;
         }
 
+        public PeliculasController()
+        {
+
+        }
+
         // GET: api/Peliculas
         public IQueryable<Peliculas> GetPeliculas()
         {
@@ -36,13 +41,13 @@ namespace Proyecto_Peliculas.Controllers
         [ResponseType(typeof(Peliculas))]
         public IHttpActionResult GetPelicula(long id)
         {
-            Peliculas peliculas = peliculasService.Get(id);
-            if (peliculas == null)
+            Peliculas pelicula = peliculasService.Get(id);
+            if (pelicula == null)
             {
                 return NotFound();
             }
 
-            return Ok(peliculas);
+            return Ok(pelicula);
         }
 
         // PUT: api/Peliculas/5
@@ -73,7 +78,7 @@ namespace Proyecto_Peliculas.Controllers
 
         // POST: api/Peliculas
         [ResponseType(typeof(Peliculas))]
-        public IHttpActionResult PostPeliculas(Peliculas pelicula)
+        public IHttpActionResult PostPelicula(Peliculas pelicula)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +92,7 @@ namespace Proyecto_Peliculas.Controllers
 
         // DELETE: api/Peliculas/5
         [ResponseType(typeof(Peliculas))]
-        public IHttpActionResult DeletePeliculas(long id)
+        public IHttpActionResult DeletePelicula(long id)
         {
             Peliculas pelicula;
             try

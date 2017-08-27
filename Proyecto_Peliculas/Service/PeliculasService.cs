@@ -10,6 +10,7 @@ namespace Proyecto_Peliculas.Service
     public class PeliculasService : IPeliculasService
     {
         private IPeliculasRepository PeliculasRepository;
+
         public PeliculasService(IPeliculasRepository _peliculasRepository)
         {
             this.PeliculasRepository = _peliculasRepository;
@@ -40,7 +41,7 @@ namespace Proyecto_Peliculas.Service
             return PeliculasRepository.Delete(id);
         }
 
-        public Peliculas create(Peliculas entrada)
+        public Peliculas create(Peliculas peliculas)
         {
             throw new NotImplementedException();
         }

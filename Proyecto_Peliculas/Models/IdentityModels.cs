@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Proyecto_Peliculas.Modelos;
 using System.Data.Entity;
+using System;
 
 namespace Proyecto_Peliculas.Models
 {
@@ -22,7 +23,7 @@ namespace Proyecto_Peliculas.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        [System.ThreadStatic]
+        [ThreadStatic]
         public static ApplicationDbContext applicationDbContext;
 
         public ApplicationDbContext()
